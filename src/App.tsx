@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PdfViewer from './PdfViewer';
+import { Worker } from '@react-pdf-viewer/core';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{textAlign: 'center'}}>
+        <h2 style={{color: 'crimson'}}>Mapra Pdf Viewer</h2>
+      </div>
+      <div>
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+      <PdfViewer></PdfViewer>
+      </Worker>
+      </div>
     </div>
   );
 }
